@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgentOS - Kết quả</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#0b1c30",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "surface": "#faf9ff",
+                        "inverse-on-surface": "#eff0fa",
+                        "secondary": "#505f76",
+                        "on-tertiary-fixed-variant": "#6d3a00",
+                        "inverse-surface": "#2e3038",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191b22",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-dim": "#d8d9e3",
+                        "primary-fixed-dim": "#afc6ff",
+                        "on-tertiary-fixed": "#2e1500",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#faf9ff",
+                        "on-primary-fixed": "#001a43",
+                        "inverse-primary": "#afc6ff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdcc2",
+                        "surface-container-high": "#e7e7f1",
+                        "tertiary-container": "#b06000",
+                        "on-primary-fixed-variant": "#004398",
+                        "outline-variant": "#c2c6d6",
+                        "secondary-fixed": "#d3e4fe",
+                        "outline": "#727785",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-secondary-container": "#54647a",
+                        "primary-container": "#2c70e2",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191b22",
+                        "surface-variant": "#e1e2ec",
+                        "secondary-container": "#d0e1fb",
+                        "surface-tint": "#0059c6",
+                        "surface-container-low": "#f2f3fd",
+                        "tertiary-fixed-dim": "#ffb77b",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#424753",
+                        "on-primary-container": "#fefcff",
+                        "surface-container-highest": "#e1e2ec",
+                        "surface-container": "#ecedf7",
+                        "tertiary": "#8c4b00",
+                        "primary": "#0057c2",
+                        "surface-bright": "#faf9ff",
+                        "primary-fixed": "#d9e2ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px",
+                        "sidebar-width": "260px",
+                        "margin-mobile": "16px",
+                        "topbar-height": "64px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "label-md": ["Inter"],
+                        "caption": ["Inter"],
+                        "h2": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "caption": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "h2": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "h1": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .phone-frame {
+            width: 320px;
+            height: 640px;
+            border: 8px solid #191b22;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #191b22;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Shell -->
+<aside class="fixed left-0 top-0 h-full w-[260px] flex flex-col z-50 bg-surface border-r border-outline-variant">
+<div class="p-6">
+<h1 class="font-h2 text-h2 font-black text-primary">AgentOS</h1>
+<p class="font-caption text-caption text-on-surface-variant">Studio Nội dung</p>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md text-body-md">Bảng điều khiển</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-body-md text-body-md">Chạy Pipeline</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-body-md text-body-md">Nhiệm vụ</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">database</span>
+<span class="font-body-md text-body-md">Kho tri thức</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-body-md text-body-md">Xem lại bản thảo</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">Đánh giá</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-secondary-container text-on-secondary-container font-semibold" href="#">
+<span class="material-symbols-outlined">file_download</span>
+<span class="font-body-md text-body-md">Kết quả</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-body-md text-body-md">Lịch sử</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md text-body-md">Cài đặt</span>
+</a>
+</nav>
+</aside>
+<!-- Top Navigation Bar Shell -->
+<header class="fixed top-0 right-0 left-[260px] h-topbar-height flex justify-between items-center px-gutter z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md focus-within:ring-2 focus-within:ring-primary rounded-lg transition-all">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container rounded-lg border-none focus:ring-0 text-body-sm" placeholder="Tìm kiếm kết quả..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-secondary-container/50 rounded-full border border-outline-variant">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-secondary-container">Trạng thái Pipeline</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">api</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center overflow-hidden border border-outline">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL9C1BTvbe0GUu3z6_dLEBUEHn8FIGd9Eb9uRPKtWtZ4QoouZ0rNotIhP_0Wy0rGsg1CAOUY30MIycbhCjdI3baRAunA0Ejas-DuoKj0VS4y_0Wdpn2HWKWlY_GKtwYL9K2YPMiVFGnP-WG-f21dEiY2YSgixXVe8D3dh9up5dEbOMSYKzfINbnSoyDmypDGzwyorgf6L4wss0LlCNYIMwGZLWkOuFTDEEo5BD8ilI4Ton-GpQFGUmHiPVdLAdjX-dfhxUPXH9IL4"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Stage -->
+<main class="pl-[260px] pt-topbar-height min-h-screen bg-background">
+<div class="max-w-container-max mx-auto p-gutter">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface mb-1">Kết quả cuối cùng</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Xem lại và xuất bản các chiến dịch được tạo bởi AI.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 border border-outline text-on-surface hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md">
+<span class="material-symbols-outlined">content_copy</span> Sao chép
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 border border-outline text-on-surface hover:bg-surface-container transition-all rounded-lg font-label-md text-label-md">
+<span class="material-symbols-outlined">file_download</span> Tải xuống
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2 bg-primary text-on-primary hover:opacity-90 transition-all rounded-lg font-label-md text-label-md shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span> Đăng ngay
+                    </button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Control Column -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Tab Switcher -->
+<div class="glass-panel p-2 rounded-xl flex gap-1">
+<button class="flex-1 py-2 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all">Instagram</button>
+<button class="flex-1 py-2 px-4 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all">Threads</button>
+<button class="flex-1 py-2 px-4 rounded-lg hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-all">Markdown</button>
+</div>
+<!-- Post Configuration -->
+<div class="glass-panel p-6 rounded-2xl space-y-6">
+<div>
+<h4 class="font-h3 text-h3 mb-4">Cài đặt bài đăng</h4>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">Chú thích</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded-xl p-3 font-body-sm text-body-sm h-32 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all">Cách mạng hóa quy trình làm việc của bạn với AgentOS. Mô-đun Content Studio mới của chúng tôi sử dụng các pipeline thần kinh tiên tiến để biến các ý tưởng đơn giản thành các chiến dịch đa kênh trong vài giây. 🚀 #AI #Productivity #AgentOS</textarea>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant block">Hashtags</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full font-caption text-caption">#AI</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full font-caption text-caption">#SaaS</span>
+<span class="px-3 py-1 bg-primary-fixed text-on-primary-fixed rounded-full font-caption text-caption">#Thiết_kế</span>
+<button class="w-6 h-6 rounded-full border border-dashed border-outline flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<div>
+<h4 class="font-label-md text-label-md mb-3 text-on-surface">Chọn tài sản</h4>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative aspect-square rounded-xl overflow-hidden group cursor-pointer border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A high-end 3D abstract digital render..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtobbGhY-j27UX3ydeyA6FV2T3AAMNa7uoYoVHY5llNXQ8UwDG9hwhMyzuquMHAi2Cn9vqp0f18hc2jV_nlq9U0aoLskB6hqPXZK3A22xvQvb2yNkUzkmy0l8UpcAZGhM7ihRCK9TPmd6LNmPlCZ6rMVzeI40nJKLJN_yWcRu_xq9XutjhiSkI4cMy1fNp09HwDPC5PelYGUIK5vmmAs1G6vm3Yas14wC9l0-S00QoTWgQN2Iw0oYEMFeMgBXm-k8So8zhyhuQrsY"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-xl overflow-hidden group cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A minimalist architectural render..." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjwSbXmh-Ass3cvYh3g6Vxi1K35PoUCuPLs2AjuOs4Di21nlvoHUl8bwhILcSLQnBhOMwv8BkxMjcNEtTE3f0L72KozCXLi-DwBE_GWH75g0KyjNkkz2sy5ovmahDnRiZKSnxLqNbqSxQGn5f5a5hFkIZ0UVUqwSQHLHZyQITVvnoHsGE5N3Lm9ikY8Iy05dvNc9BineK_IW4FtmjQ1fjSlw5PhfMfWQHXLKTIbJHrDUP8g6pvXVvWUZonAxkHt1A2lA2R_4741R0"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Preview Column -->
+<div class="lg:col-span-8 flex justify-center">
+<div class="w-full flex flex-col items-center">
+<div class="mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">visibility</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Xem trước trực tiếp</span>
+</div>
+<!-- Phone Frame -->
+<div class="phone-frame bg-white">
+<div class="phone-notch"></div>
+<!-- Instagram UI Mockup -->
+<div class="h-full flex flex-col pt-10">
+<!-- Top Bar -->
+<div class="px-4 py-3 flex justify-between items-center border-b border-gray-100">
+<span class="font-bold text-lg tracking-tight">Instagram</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined">favorite</span>
+<span class="material-symbols-outlined">send</span>
+</div>
+</div>
+<!-- Post Scroll Area -->
+<div class="flex-1 overflow-y-auto">
+<div class="px-4 py-3 flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 to-purple-600 p-[2px]">
+<div class="w-full h-full rounded-full bg-white p-[1px]">
+<img alt="Brand Logo" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw0lwuDqSFNXgLke0B7BRl8Ng1HmjTpv_bsBI6n8pzPwdXqJqUcwCc8dn2OFARs6Hkppaxu_eBnJHIPLRZrI3d1-M8XGII8NhFZjryhXS5lexbmM4cOFh1WvZqjQanQrafXt9dh8fuK-H-0CeNq9YA9zEI41FiPc4MRdRnQYJQGHfMGbkiWTttIjycQHDrcjrALXseWjeFY6DUSLqSjpHSpXu-2y56-_CUlFA293FQtNcpTbPPr1V6iJEBvV0OJaXIynzSaGiqvio"/>
+</div>
+</div>
+<span class="font-semibold text-xs">agent_os_official</span>
+</div>
+<div class="aspect-square w-full">
+<img class="w-full h-full object-cover" data-alt="A breathtaking digital art piece..." id="preview-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt_Um6x31L7lpvpVa66Yrb7HIxJk5SpbW6jRLAcqOkM3bWauwgFh-aBNZ3-8uVslhlNm3kpabCThfmPyVPQTOEfdjSFXGB34sOCjtSrO4jPyd8qss2EYgZCkbW__dTWXWaVKN6_H5aIdyCdt-un_s1tWcW_7nxA7rC3gXelMBf12xsog8P97OHh-wVPwszyHL8fR6WBVtLLziLnUGRrLPRmV_p-BqvVwf3ef5sDHpWS7yPZFobvSi2hXNt91-4Dk4L_kNv2z_8JRU"/>
+</div>
+<div class="p-4 space-y-2">
+<div class="flex gap-4">
+<span class="material-symbols-outlined">favorite</span>
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="material-symbols-outlined">send</span>
+<div class="flex-1 flex justify-end">
+<span class="material-symbols-outlined">bookmark</span>
+</div>
+</div>
+<div class="text-xs font-bold">1,248 lượt thích</div>
+<div class="text-xs leading-relaxed">
+<span class="font-bold mr-1">agent_os_official</span>
+                                            Cách mạng hóa quy trình làm việc của bạn với AgentOS. Mô-đun Content Studio mới của chúng tôi sử dụng các pipeline thần kinh tiên tiến để biến các ý tưởng đơn giản thành các chiến dịch đa kênh trong vài giây. 🚀 #AI #Productivity #AgentOS
+                                        </div>
+<div class="text-[10px] text-gray-400 uppercase tracking-tight">2 phút trước</div>
+</div>
+</div>
+<!-- Navigation Bar -->
+<div class="px-8 py-3 border-t border-gray-100 flex justify-between items-center bg-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="material-symbols-outlined">search</span>
+<span class="material-symbols-outlined">add_box</span>
+<span class="material-symbols-outlined">movie</span>
+<div class="w-6 h-6 rounded-full bg-gray-200"></div>
+</div>
+</div>
+</div>
+<!-- Zoom / Responsive Controls -->
+<div class="mt-8 flex gap-4">
+<button class="p-2 rounded-full glass-panel hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">zoom_in</span>
+</button>
+<button class="p-2 rounded-full glass-panel hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">zoom_out</span>
+</button>
+<button class="p-2 rounded-full glass-panel hover:bg-surface-container-high transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">refresh</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'scale(0.98)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'scale(1)';
+            });
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+
+        // Simple tab switching logic for UI feel
+        const tabs = document.querySelectorAll('.glass-panel button');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-primary', 'text-on-primary');
+                    t.classList.add('hover:bg-surface-container-high', 'text-on-surface-variant');
+                });
+                tab.classList.remove('hover:bg-surface-container-high', 'text-on-surface-variant');
+                tab.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+    </script>
+</body></html>
