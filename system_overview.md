@@ -126,6 +126,9 @@ THREADS_USER_ID=2713...
    python -m uvicorn src.main:app --port 8000 --reload
    ```
    * *API docs sẽ có sẵn tại: `http://localhost:8000/docs`*
+cd backend
+source .venv/bin/activate # Trên Windows dùng: .venv\Scripts\activate
+python -m uvicorn src.main:app --port 8000 --reload
 
 ---
 

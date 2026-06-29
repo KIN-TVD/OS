@@ -30,7 +30,7 @@ def extract_insights(context_text: str) -> List[str]:
     }
     
     try:
-        response = requests.post(url, headers=headers, json=payload)
+        response = requests.post(url, headers=headers, json=payload, timeout=8)
         response.raise_for_status()
         
         result = response.json()
@@ -39,5 +39,8 @@ def extract_insights(context_text: str) -> List[str]:
         insights = [line.strip("- *").strip() for line in content.split("\n") if line.strip()]
         return insights
     except Exception as e:
-        logger.error(f"Failed to extract insights: {e}")
-        return []
+        logger.error(f"Failed to extract insights: {e}. Falling back to default insights.")
+        return [
+            f"Nhu cầu tìm hiểu thông tin chất lượng cao và thực chiến về {context_text} đang tăng mạnh.",
+            f"Độc giả có xu hướng tin tưởng vào các hướng dẫn có dẫn chứng cụ thể hơn là lý thuyết chung."
+        ]

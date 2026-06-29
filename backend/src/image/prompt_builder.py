@@ -49,7 +49,7 @@ def build_prompt(caption: Caption) -> str:
     }
 
     try:
-        response = requests.post(url, headers=headers, json=payload, timeout=60)
+        response = requests.post(url, headers=headers, json=payload, timeout=8)
         response.raise_for_status()
         content = response.json()["choices"][0]["message"]["content"].strip()
 
